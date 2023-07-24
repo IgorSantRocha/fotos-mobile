@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <title>Localizar Imagens</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    
+   
+
+</head>
+
+<body>
+  <div class="container">
+        <h1>Localizar Imagens</h1>
+        <div class="pesquisa">
+          <input class="Pesq" type="text" id="texto">
+                    
+            <button class="Pesq" id="botao">Visualizar imagens</button>
+          </div>
+          <div class="container">
+            <div class="gallery-wrapper">
+              <div class="gallery">
+                <a class="image-link" href="#" data-fancybox="images" id="link1">
+                  <img src="#" id="imge1" alt="foto1" class="item current-item">
+                </a>
+
+                <a class="image-link" href="#" data-fancybox="images" id="link2"><img src="#" id="imge2" alt="foto2" class="item current-item"></a>
+                <a class="image-link" href="#" data-fancybox="images" id="link3"><img src="#" id="imge3" alt="foto3" class="item current-item"></a>
+              </div>  
+          </div>      
+          </div>
+      </div>     
+
+	<script>
+	  const texto = document.getElementById("texto");
+	  const imagem1 = document.getElementById("imge1");
+	  const imagem2 = document.getElementById("imge2");
+	  const imagem3 = document.getElementById("imge3");
+	  const link1 = document.getElementById("link1");
+	  const link2 = document.getElementById("link2");
+	  const link3 = document.getElementById("link3");
+	  const botao = document.getElementById("botao");
+
+	  function visualizarImagens() {
+	    imagem1.src = `file://192.168.0.212/e/STONE-PRE-BAIXADAS/FOTOS-RLOG/${texto.value}_1.jpg`;
+	    imagem2.src = `file://192.168.0.212/e/STONE-PRE-BAIXADAS/FOTOS-RLOG/${texto.value}_2.jpg`;
+	    imagem3.src = `file://192.168.0.212/e/STONE-PRE-BAIXADAS/FOTOS-RLOG/${texto.value}_3.jpg`;
+	    link1.href = `file://192.168.0.212/e/STONE-PRE-BAIXADAS/FOTOS-RLOG/${texto.value}_1.jpg`;
+	    link2.href = `file://192.168.0.212/e/STONE-PRE-BAIXADAS/FOTOS-RLOG/${texto.value}_2.jpg`;
+	    link3.href = `file://192.168.0.212/e/STONE-PRE-BAIXADAS/FOTOS-RLOG/${texto.value}_3.jpg`;
+	  }
+
+	  botao.addEventListener("click", visualizarImagens);
+
+	  texto.addEventListener("keydown", function(event) {
+	    if (event.keyCode === 13) {
+	      event.preventDefault();
+	      visualizarImagens();
+	    }
+	  });
+	</script>
+
+
+      
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+   
+    
+    <script>
+        $(document).ready(function() {
+        $("[data-fancybox]").fancybox({
+          buttons: ["zoom", "close"],
+          afterShow : function(instance, current) {
+            var toolbar = instance.$refs.toolbar;
+            if (!$(toolbar).find('.fancybox-button--rotate').length) {
+              $(toolbar).prepend('<button class="fancybox-button fancybox-button--rotate" title="Rotate image" onclick="rotateImage()"><img src="imagens/girar.png" class="fancybox-img"></button>');
+            }
+          }
+        });
+      });
+
+      function rotateImage() {
+        var img = $(".fancybox-image");
+        var angle = img.data("angle") || 0;
+        angle += 90;
+        img.css({
+          "-webkit-transform": "rotate(" + angle + "deg)",
+          "-moz-transform": "rotate(" + angle + "deg)",
+          "-o-transform": "rotate(" + angle + "deg)",
+          "-ms-transform": "rotate(" + angle + "deg)",
+          transform: "rotate(" + angle + "deg)"
+        });
+        img.data("angle", angle);
+      }
+    </script>
+
+</body>
+</html>
+
+
