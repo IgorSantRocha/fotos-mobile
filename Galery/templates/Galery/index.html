@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
+    {% load static %}
     <title>Localizar Imagens</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <link rel="stylesheet" href="{% static 'Galery/css/style.css' %}">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css"></link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
-    
+    -->
    
 
 </head>
@@ -28,6 +29,8 @@
 
                 <a class="image-link" href="#" data-fancybox="images" id="link2"><img src="#" id="imge2" alt="foto2" class="item current-item"></a>
                 <a class="image-link" href="#" data-fancybox="images" id="link3"><img src="#" id="imge3" alt="foto3" class="item current-item"></a>
+                
+                <a class="image-link" href="https://firebasestorage.googleapis.com/v0/b/projeto-cb01d.appspot.com/o/JPEG_20230724_122230_2118107246759228771.jpg?alt=media&token=db69d1df-61f5-48bf-ad5d-480914af52bc" data-fancybox="images" id="link4"><img src="https://firebasestorage.googleapis.com/v0/b/projeto-cb01d.appspot.com/o/JPEG_20230724_122230_2118107246759228771.jpg?alt=media&token=db69d1df-61f5-48bf-ad5d-480914af52bc" id="imge4" alt="foto4" class="item current-item"></a>
               </div>  
           </div>      
           </div>

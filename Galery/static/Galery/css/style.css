@@ -1,0 +1,100 @@
+  * {
+    box-sizing: border-box;
+  }
+
+  body{
+    background-image: url("../images/Detalhe_Fundo.png");
+    background-color:azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  h1{
+    position: center;
+    text-align: center;
+    padding: 12px;
+    font-family: sans-serif;
+    align-items: center;
+    margin: 0 auto;
+    height: 80px; 
+    background-color: transparent; 
+  }
+
+  .fancybox-img{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .pesquisa{
+    text-align: center;
+    padding: 12px;
+    font-family: sans-serif;
+    margin: 0 auto;
+    height: 80px; 
+    background-color: transparent; 
+  }
+
+  .container {
+    position: relative;
+    padding: 12px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .gallery-wrapper {
+    overflow-x: auto;
+  }
+
+  .gallery {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery a {
+    margin: 10px;
+    flex: 0 0 calc(20% - 20px);
+    max-width: calc(20% - 20px);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .gallery a:hover {
+    transform: scale(1.05);
+  }
+
+  .gallery img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .item {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    flex-shrink: 0;
+    transition: all 600ms ease-in-out;
+    opacity: 0.2;
+  }
+
+  .item:hover{
+    opacity: 2;
+  }
+
+  .gallery-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
